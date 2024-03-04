@@ -1,16 +1,22 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router";
 import "./App.css";
+import Home from "./views/Home";
+import About from "./views/About";
+import Skills from "./views/Skills";
+import Contact from "./views/Contact";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <>
-      <h1>My Portfolio</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-        molestiae asperiores, quis porro autem facere ratione illum est atque
-        eos obcaecati natus quos excepturi magni! Iusto deleniti doloribus neque
-        nesciunt.
-      </p>
+        <NavBar/>
+      <Routes>
+        <Route path="/" exact element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/skills" element={<Skills/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+      </Routes>
     </>
   );
 }
